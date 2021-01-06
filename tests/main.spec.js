@@ -50,11 +50,18 @@ describe('Calc', function() {
   });
 
   describe('Div', function() {
-    it('Should return 6 when `div(12, 2)`', function() {
-      expect(calc.div(12, 2)).to.be.equal(6);
+    context('Success cases', () => {
+      it('Should return 6 when `div(12, 2)`', function() {
+        expect(calc.div(12, 2)).to.be.equal(6);
+      });
+      it('Should return 5 when `div(10, 2)`', function() {
+        expect(calc.div(10, 2)).to.be.equal(5);
+      });
     });
-    it('Should return a erro when `div(12, 0)`', function() {
-      expect(calc.div(12, 0)).to.be.equal(Infinity);
+    context('Fail cases', () => {
+      it('Should return a erro when `div(12, 0)`', function() {
+        expect(calc.div(12, 0)).to.be.equal(Infinity);
+      });
     });
   });
 });
